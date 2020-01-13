@@ -73,7 +73,7 @@
 
 <script>
 export default {
-    name: 'SpeechlessPage',
+    name: 'SpeechlessSubject',
     data: function () {
         return {
             columns: [

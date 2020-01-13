@@ -13,7 +13,7 @@
 
 <script>
 
-import SpeechlessPage from "./components/speechless_page/SpeechLessPage";
+import SpeechlessPage from "./components/speechless_subject/SpeechLessPage";
 import SpinningWheel from "./components/spinning_wheel/SpinningWheel";
 export default {
   name: 'App',
