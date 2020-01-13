@@ -27,7 +27,7 @@ export default {
     updateSubjects(subjects) {
       this.subjects=subjects;
     }
-  }
+  },
   components: {
     SpeechlessSubject,
     SpinningWheel
