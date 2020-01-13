@@ -9,7 +9,7 @@
                     <v-expansion-panel-content>
                         <v-data-table
                                 :headers="columns"
-                                :items="dataSpin"
+                                :items="subjects"
                                 :hide-default-footer="true"
                                 class="elevation-1"
                         >
@@ -81,7 +81,7 @@ export default {
                 { text: 'Actions', value: 'action', sortable: false },
             ],
             container: null,
-            dataSpin : [
+            subjects : [
                 {Nom:"Un film",  Lien:""},
                 {Nom:"Une serie", Lien:""},
                 {Nom:"Un logiciel", Lien:""}
@@ -100,19 +100,18 @@ export default {
     },
     methods : {
         getDataSpin(){
-            return this.dataSpin;
+            return this.subjects;
         },
         editItem (item) {
-            this.editedIndex = this.dataSpin.indexOf(item)
+            this.editedIndex = this.subjects.indexOf(item)
             this.editedItem = Object.assign({}, item)
             this.dialog = true
         },
         deleteItem (item) {
-            const index = this.dataSpin.indexOf(item)
-            confirm('Are you sure you want to delete this item?') && this.dataSpin.splice(index, 1)
+            const index = this.subjects.indexOf(item)
+            confirm('Are you sure you want to delete this item?') && this.subjects.splice(index, 1)
 
-            this.removeGraph()
-            this.buildGraph()
+            this.$emit("subjects",this.subjects)
         },
         close () {
             this.dialog = false
@@ -123,11 +122,12 @@ export default {
         },
         save () {
             if (this.editedIndex > -1) {
-                Object.assign(this.dataSpin[this.editedIndex], this.editedItem)
+                Object.assign(this.subjects[this.editedIndex], this.editedItem)
             } else {
-                this.dataSpin.push(this.editedItem)
+                this.subjects.push(this.editedItem)
             }
             this.close()
+            this.$emit("subjects",this.subjects)
         },
     },
     watch: {
