@@ -1,0 +1,25 @@
+<template>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      Open Speechless
+    </v-app-bar>
+
+    <v-content>
+    </v-content>
+  </v-app>
+</template>
+
+<script>
+
+export default {
+  name: 'App',
+  props: {
+    source: String,
+  },
+  data: () => ({
+    drawer: null,
+  }),
+  components: {
+  },
+};
+</script>
