@@ -5,12 +5,14 @@
     </v-app-bar>
 
     <v-content>
+      <SpeechlessPage/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 
+import SpeechlessPage from "./components/speechless_page/SpeechLessPage";
 export default {
   name: 'App',
   props: {
@@ -20,6 +22,7 @@ export default {
     drawer: null,
   }),
   components: {
+    SpeechlessPage
   },
 };
 </script>
