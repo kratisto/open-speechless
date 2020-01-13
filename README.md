@@ -1,24 +1,9 @@
 # open-speechless
 
-## Project setup
-```
-npm install
-```
+## Contribution
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Please make sure to read the [Contributing Guide](https://github.com/kratisto/open-speechless/blob/master/.github/CONTRIBUTING.md) before making a pull request.!
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## License
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[MIT](http://opensource.org/licenses/MIT)
