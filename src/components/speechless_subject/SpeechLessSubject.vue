@@ -81,11 +81,6 @@ export default {
                 { text: 'Actions', value: 'action', sortable: false },
             ],
             container: null,
-            subjects : [
-                {Nom:"Un film",  Lien:""},
-                {Nom:"Une serie", Lien:""},
-                {Nom:"Un logiciel", Lien:""}
-            ],
             dialog: false,
             editedIndex: -1,
             editedItem: {
@@ -98,10 +93,12 @@ export default {
             },
         }
     },
+    props: {
+        subjects : {
+            type : Array
+        }
+    },
     methods : {
-        getDataSpin(){
-            return this.subjects;
-        },
         editItem (item) {
             this.editedIndex = this.subjects.indexOf(item)
             this.editedItem = Object.assign({}, item)
@@ -123,11 +120,12 @@ export default {
         save () {
             if (this.editedIndex > -1) {
                 Object.assign(this.subjects[this.editedIndex], this.editedItem)
+                this.$emit("replace-subject",{index: this.editedIndex, subject: this.editedItem})
             } else {
                 this.subjects.push(this.editedItem)
+                this.$emit("subjects",this.subjects)
             }
             this.close()
-            this.$emit("subjects",this.subjects)
         },
     },
     watch: {

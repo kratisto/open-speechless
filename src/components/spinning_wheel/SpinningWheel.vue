@@ -12,14 +12,20 @@
         data: function () {
             return {
                 container: null,
-                subjects : [
-                    {Nom:"Un film",  Lien:""},
-                    {Nom:"Une serie", Lien:""},
-                    {Nom:"Un logiciel", Lien:""}
-                ],
+                spinData: [],
+            }
+        },
+        props: {
+            subjects: {
+                type: Array
             }
         },
         methods : {
+            replaceSubject(replace){
+                Object.assign(this.subjects[replace.index], replace.subject)
+                this.removeGraph()
+                this.buildGraph()
+            },
             getSubjects(){
                 return this.subjects;
             },
@@ -106,9 +112,6 @@
                     .style({"fill":"black"});
             }
         },
-        created() {
-        },
-
         computed: {
             formTitle () {
                 return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
@@ -117,6 +120,10 @@
         watch: {
             dialog (val) {
                 val || this.close()
+            },
+            subjects: function() {
+                this.removeGraph();
+                this.buildGraph();
             },
         },
         mounted() {
