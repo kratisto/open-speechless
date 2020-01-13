@@ -6,6 +6,7 @@
 
     <v-content>
       <SpeechlessPage/>
+      <SpinningWheel/>
     </v-content>
   </v-app>
 </template>
@@ -13,6 +14,7 @@
 <script>
 
 import SpeechlessPage from "./components/speechless_page/SpeechLessPage";
+import SpinningWheel from "./components/spinning_wheel/SpinningWheel";
 export default {
   name: 'App',
   props: {
@@ -22,6 +24,7 @@ export default {
     drawer: null,
   }),
   components: {
+    SpinningWheel,
     SpeechlessPage
   },
 };
