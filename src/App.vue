@@ -6,7 +6,7 @@
 
     <v-content>
       <SpeechlessSubject @inputData="updateSubjects"/>
-      <SpinningWheel/>
+      <SpinningWheel :subjects="subjects"/>
     </v-content>
   </v-app>
 </template>

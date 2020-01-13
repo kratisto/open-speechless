@@ -12,7 +12,7 @@
         data: function () {
             return {
                 container: null,
-                dataSpin : [
+                subjects : [
                     {Nom:"Un film",  Lien:""},
                     {Nom:"Une serie", Lien:""},
                     {Nom:"Un logiciel", Lien:""}
@@ -20,8 +20,8 @@
             }
         },
         methods : {
-            getDataSpin(){
-                return this.dataSpin;
+            getSubjects(){
+                return this.subjects;
             },
             removeGraph(){
                 d3.select('#chart svg').remove()
@@ -36,7 +36,7 @@
                     oldrotation = 0,
                     picked = 100000,
                     color = d3.scale.category20();
-                var data = this.getDataSpin();
+                var data = this.getSubjects();
                 var svg = d3.select('#chart')
                     .append("svg")
                     .data([data])
