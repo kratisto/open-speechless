@@ -5,7 +5,7 @@
     </v-app-bar>
 
     <v-content>
-      <SpeechlessSubject/>
+      <SpeechlessSubject @inputData="updateSubjects"/>
       <SpinningWheel/>
     </v-content>
   </v-app>
@@ -21,8 +21,13 @@ export default {
     source: String,
   },
   data: () => ({
-    drawer: null,
+    subjects: [],
   }),
+  methods: {
+    updateSubjects(subjects) {
+      this.subjects=subjects;
+    }
+  }
   components: {
     SpeechlessSubject,
     SpinningWheel
