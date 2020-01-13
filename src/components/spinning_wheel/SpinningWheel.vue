@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="chart_container">
         <div id="chart"></div>
         <div id="question"><h1></h1></div>
     </div>
@@ -151,6 +151,10 @@
         top:50%;
         -webkit-transform:translate(0,-50%);
         transform:translate(0,-50%);
+    }
+
+    #chart_container{
+        padding: 20px;
     }
 
 </style>
