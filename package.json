@@ -8,13 +8,15 @@
   },
   "dependencies": {
     "core-js": "^3.4.4",
-    "vue": "^2.6.10",
     "d3": "3.5.17",
+    "vue": "^2.6.10",
+    "vue-router": "^3.3.4",
     "vuetify": "^2.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-plugin-router": "^4.4.6",
     "@vue/cli-service": "^4.1.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
